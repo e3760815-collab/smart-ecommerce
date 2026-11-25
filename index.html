@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f1">
+  <meta name="description" content="Discover thoughtfully selected essentials, smart recommendations, and a shopping experience made around you.">
+  <title>morrow — Find your next favorite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="announcement"><span>GOOD THINGS, DELIVERED.</span> Free shipping on orders over $75 <span class="announcement-end">A little more joy, every day <span aria-hidden="true">✳</span></span></div>
+  <header class="site-header">
+    <a class="wordmark" href="#home" aria-label="morrow home">morrow<span>.</span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#shop">Shop all</a><a href="#shop" data-nav-category="Home">Home</a><a href="#shop" data-nav-category="Tech">Tech</a><a href="#shop" data-nav-category="Accessories">Accessories</a>
+    </nav>
+    <div class="header-actions">
+      <label class="search-box"><span class="sr-only">Search products</span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m16 16 4 4"></path></svg><input id="search-input" type="search" placeholder="Find something lovely…"></label>
+      <button class="icon-button favorites-shortcut" id="favorites-shortcut" aria-label="Show favorites"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 8.7c0 5.2-8.8 10-8.8 10s-8.8-4.8-8.8-10a4.6 4.6 0 0 1 8.8-1.9 4.6 4.6 0 0 1 8.8 1.9Z"></path></svg></button>
+      <button class="cart-button" id="cart-open" aria-label="Open shopping bag">Bag <span class="cart-count" id="cart-count">0</span></button>
+    </div>
+  </header>
+  <main id="home">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy"><span class="eyebrow"><span class="eyebrow-dot"></span> YOUR EVERYDAY, UPGRADED</span><h1 id="hero-title">Find your<br>next <em>favorite.</em></h1><p>Good design. Better details. The little things that make every day feel a bit more like yours.</p><a class="button button-dark" href="#shop">Explore the collection <span aria-hidden="true">↘</span></a><div class="hero-note"><span class="avatar-stack"><i>J</i><i>A</i><i>M</i></span><span>Loved by <strong>12,000+</strong> happy humans</span></div></div>
+      <div class="hero-art"><img src="https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?auto=format&fit=crop&w=1400&q=85" alt="Warm, sunlit living room with thoughtfully chosen modern furniture"><div class="floating-note"><span class="sparkle">✳</span><span><strong>Made for your kind of day</strong><small>Thoughtful finds, picked for you</small></span><span class="note-arrow">↗</span></div><div class="hero-index">01 <span>/</span> 04</div></div>
+      <div class="hero-side-label">THE GOOD STUFF, MADE SIMPLE</div>
+    </section>
+    <section class="benefits" aria-label="Shopping benefits"><div><span class="benefit-icon">✳</span><span><strong>Considered by design</strong><small>Quality you'll feel good about</small></span></div><div><span class="benefit-icon">↗</span><span><strong>Free shipping over $75</strong><small>On the way, on us</small></span></div><div><span class="benefit-icon">♡</span><span><strong>30-day easy returns</strong><small>Keep what feels right</small></span></div><div><span class="benefit-icon">✦</span><span><strong>A little more personal</strong><small>Smart picks, just for you</small></span></div></section>
+    <section class="shop-section" id="shop">
+      <div class="section-heading"><div><span class="eyebrow">A GOOD PLACE TO START</span><h2>Things you'll <em>love.</em></h2></div><p>Useful, beautiful, and just a little unexpected.<br>Go on, take a look around.</p></div>
+      <div class="shop-toolbar"><div class="category-list" id="category-list" aria-label="Filter by category"><button class="category-chip active" data-category="All">Everything <span>08</span></button><button class="category-chip" data-category="Home">Home</button><button class="category-chip" data-category="Tech">Tech</button><button class="category-chip" data-category="Accessories">Accessories</button><button class="category-chip" data-category="Wellness">Wellness</button><button class="category-chip smart-chip" id="for-you-button">✳ For you</button></div><label class="sort-control">Sort by <select id="sort-select" aria-label="Sort products"><option value="featured">Featured</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option><option value="rating">Top rated</option></select></label></div>
+      <div class="recommendation-note" id="recommendation-note" hidden><span>✳</span><p><strong>Your kind of good.</strong> Picks are getting smarter as you shop.</p><button id="clear-personalization" aria-label="Clear personalized filter">×</button></div>
+      <div class="product-grid" id="product-grid" aria-live="polite"></div>
+      <div class="empty-state" id="empty-state" hidden><span>☁</span><h3>No finds just yet.</h3><p>Try another search or category. Your next favorite is out there.</p><button class="button button-dark" id="reset-filters">See everything</button></div>
+      <div class="bottom-note"><span>✳</span> GOOD FINDS. GOOD FEELINGS. NO GUESSWORK.</div>
+    </section>
+    <section class="newsletter"><div><span class="eyebrow">A NOTE FROM MORROW</span><h2>Good things in<br>your <em>inbox.</em></h2></div><div class="newsletter-form-wrap"><p>Fresh finds, thoughtful ideas, and 10% off your first order. Only the good stuff.</p><form id="newsletter-form"><label class="sr-only" for="email-input">Email address</label><input id="email-input" type="email" placeholder="Your email address" required><button type="submit" aria-label="Subscribe">Count me in <span>↗</span></button></form><small>By subscribing, you agree to occasional nice emails. Unsubscribe anytime.</small></div><span class="newsletter-flower" aria-hidden="true">✳</span></section>
+  </main>
+  <footer class="site-footer"><a class="wordmark" href="#home">morrow<span>.</span></a><p>A little more joy, every day.</p><span>© <span id="year"></span> morrow goods. Made for living.</span></footer>
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping bag" aria-hidden="true"><div class="drawer-header"><div><span class="eyebrow">YOUR GOOD FINDS</span><h2>Your bag <span id="drawer-count">(0)</span></h2></div><button class="close-button" id="cart-close" aria-label="Close shopping bag">×</button></div><div class="shipping-progress" id="shipping-progress"></div><div class="cart-items" id="cart-items"></div><div class="cart-empty" id="cart-empty"><span>♡</span><h3>Room for something good.</h3><p>Your bag is taking a little breather.</p><button class="button button-dark" id="continue-shopping">Find your favorite</button></div><div class="cart-footer" id="cart-footer"><div class="subtotal"><span>Subtotal</span><strong id="cart-subtotal">$0.00</strong></div><p>Shipping and any discounts are calculated at checkout.</p><button class="button button-dark checkout-button" id="checkout-button">Checkout <span>↗</span></button><small>Secure checkout · Easy 30-day returns</small></div></aside>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
